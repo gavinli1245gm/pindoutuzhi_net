@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '@/config';
+
+const breadcrumbs = [
+  { label: '首页', href: '/' },
+  { label: '使用条款' },
+];
+---
+
+<BaseLayout
+  title={`使用条款 | ${siteConfig.site.name}`}
+  description={`查看 ${siteConfig.site.name} 的使用条款与免责声明`}
+>
+  <Breadcrumb items={breadcrumbs} />
+  <section class="py-6 md:py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">使用条款</h1>
+      <div class="prose prose-gray dark:prose-invert max-w-none">
+        <p>访问和使用本站，即表示你已阅读并同意遵守本条款。</p>
+        <h2>服务说明</h2>
+        <p>
+          本站提供拼豆图纸的浏览、检索、详情查看与下载参考服务。我们会持续优化页面体验，内容结构和功能细节可能随版本调整。
+        </p>
+        <h2>用户责任</h2>
+        <p>
+          你在使用本站内容时应遵守适用法律法规，不得将站内资源用于违法用途。由用户使用行为引发的法律风险与责任由用户自行承担。
+        </p>
+        <h2>版权与使用边界</h2>
+        <p>
+          站内图纸主要用于学习、交流与制作参考。除非页面明确授权，未经权利人许可，不得将相关图纸用于商业分发、二次售卖或侵权用途。
+        </p>
+        <h2>免责声明</h2>
+        <p>
+          本站按“现状”提供服务。对于因网络环境、设备兼容性、第三方服务异常、内容来源变更或用户误操作导致的直接或间接损失，本站不承担赔偿责任。
+        </p>
+        <h2>条款更新</h2>
+        <p>当站点功能或运营策略变化时，我们可能更新本条款。更新后继续使用本站视为你已接受最新版条款。</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

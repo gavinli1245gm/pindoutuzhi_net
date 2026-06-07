@@ -1,0 +1,56 @@
+---
+import { siteConfig } from '@/config';
+
+const { site, nav } = siteConfig;
+---
+
+<header class="sticky top-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-gray-100 dark:border-gray-800">
+  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    <a href="/" class="text-xl font-bold text-gray-900 dark:text-gray-100 hover:text-primary transition-colors">
+      {site.logo ? <img src={site.logo} alt={site.name} class="h-8 dark:filter-[invert(1)_brightness(2)_grayscale(100%)]" /> : site.name}
+    </a>
+
+    <nav class="hidden md:flex items-center gap-6">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          class="text-sm text-gray-600 dark:text-gray-300 hover:text-primary transition-colors"
+          target={item.external ? '_blank' : undefined}
+          rel={item.external ? 'noopener noreferrer' : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </nav>
+
+    <button
+      id="mobile-menu-btn"
+      class="md:hidden p-2 text-gray-600 dark:text-gray-300"
+      aria-label="菜单"
+    >
+      <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+      </svg>
+    </button>
+  </div>
+
+  <div id="mobile-menu" class="hidden md:hidden border-t border-gray-100 dark:border-gray-800 bg-white dark:bg-slate-900">
+    <div class="px-4 py-3 space-y-2">
+      {nav.map((item) => (
+        <a
+          href={item.href}
+          class="block py-2 text-sm text-gray-600 dark:text-gray-300 hover:text-primary"
+          target={item.external ? '_blank' : undefined}
+        >
+          {item.label}
+        </a>
+      ))}
+    </div>
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  btn?.addEventListener('click', () => menu?.classList.toggle('hidden'));
+</script>

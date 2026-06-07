@@ -1,0 +1,45 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Breadcrumb from '../components/Breadcrumb.astro';
+import { siteConfig } from '@/config';
+
+const breadcrumbs = [
+  { label: '首页', href: '/' },
+  { label: '隐私政策' },
+];
+---
+
+<BaseLayout
+  title={`隐私政策 | ${siteConfig.site.name}`}
+  description={`了解 ${siteConfig.site.name} 的隐私政策与数据处理说明`}
+>
+  <Breadcrumb items={breadcrumbs} />
+  <section class="py-6 md:py-10">
+    <div class="max-w-3xl mx-auto px-4">
+      <h1 class="text-3xl md:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">隐私政策</h1>
+      <div class="prose prose-gray dark:prose-invert max-w-none">
+        <p>
+          我们重视你的隐私。拼豆图纸是图纸内容展示站点，默认不会要求你注册账号，也不会主动采集与图纸浏览无关的个人敏感信息。
+        </p>
+        <h2>我们可能收集的信息</h2>
+        <p>
+          为保障服务稳定，服务器可能记录基础访问日志（如访问时间、页面路径、设备类型、错误信息）。这些信息仅用于性能优化、故障排查与安全防护。
+        </p>
+        <h2>本地存储说明</h2>
+        <p>
+          站点可能使用浏览器本地存储（如主题偏好）来改善阅读体验。你可随时在浏览器中手动清除相关数据。
+        </p>
+        <h2>Cookies 与统计</h2>
+        <p>
+          若站点启用了第三方统计服务，相关服务可能通过 Cookie 或类似技术生成访问统计。其数据处理规则以第三方服务条款为准。
+        </p>
+        <h2>图纸与外链说明</h2>
+        <p>
+          站内图纸内容可能引用外部来源或用户投稿素材。若你认为相关内容涉及版权或隐私问题，可通过页面联系方式提交说明，我们会及时核查处理。
+        </p>
+        <h2>政策更新</h2>
+        <p>当服务内容、法律法规或运营方式发生变化时，我们可能更新本政策，更新版本会直接发布在本页面。</p>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
