@@ -3,7 +3,7 @@ title: '十二生肖拼豆图纸:老鼠-64x64-mard216'
 description: '拼豆图纸十二生肖鼠'
 date: '2026-06-08'
 author: '拼豆图纸'
-tags: ["拼豆图纸十二生肖鼠"]
+tags: ["十二生肖"]
 image: /images/shiershengxiaopindoutuzhilaoshu64x64mard216-nvky.jpg
 ---
 
